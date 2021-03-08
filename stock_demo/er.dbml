@@ -1,0 +1,49 @@
+// copy to https://dbdiagram.io/d to generate ER Diagram
+
+//// -- Tables and References
+
+// Creating tables
+Table profile as P {
+  p_code                  string [pk]
+  p_company_name          string
+  p_currency              string
+  p_description           string
+  p_ceo                   string
+  p_address               string
+  p_ipo_date              date
+  p_exchange              string
+  p_exchange_code         string
+  p_country               string
+  p_state                 string
+  p_city                  string
+  p_industry_id           int
+}
+
+Table industry {
+  sector                  string
+  industry                string
+  id                      int [pk]
+}
+
+Table history {
+  h_code                  string [ref:> P.p_code]
+  h_date                  date
+  h_open                  double
+  h_high                  double
+  h_low                   double
+  h_close                 double
+  h_volume                double
+  h_dividends             double
+  h_stock_splits          double
+}
+
+Table tweets {
+  t_code                  string [ref:> P.p_code]
+t_date                  timestamp
+t_author                string
+t_content               string
+}
+
+// Creating references
+// > many-to-one; < one-to-many; - one-to-one
+Ref: P.p_industry_id > industry.id

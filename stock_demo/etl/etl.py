@@ -38,7 +38,7 @@ class Args:
 
 def parse_args(argv=None):
     if "-h" in argv:
-        print("usage: spark-submit etl.py <profile_dir> <history_dir> <tweet_path>")
+        print("usage: spark-submit etl.py <data_dir>")
         exit(0)
     # default
     data_dir = "/data/opt/msc2020/demo/demo1"

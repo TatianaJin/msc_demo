@@ -1,0 +1,39 @@
+// copy to https://dbdiagram.io/d to generate ER Diagram
+
+Table artist {
+  a_id                    int [pk]
+  a_spotify_id            string
+  a_name                  string
+  genres                  string[]
+}
+
+Table track_artists {
+  track_id                string [pk, ref:- track.t_id]
+  artist_id               int [ref:> artist.a_id]
+}
+
+Table track {
+  t_id                    string
+  t_acousticness          double
+  t_danceability          double
+  t_duration_ms           int
+  t_energy                double
+  t_explicit              boolean
+  t_instrumentalness      double
+  t_key                   int
+  t_liveness              double
+  t_loudness              double
+  t_mode                  boolean
+  t_name                  string
+  t_release_date          date
+  t_speechiness           double
+  t_tempo                 double
+  t_valence               double
+  t_year                  int
+  t_popularity            int
+  t_album                 string
+  t_album_id              string
+  t_track_number          int
+  t_disc_number           int
+  t_time_signature        double
+}

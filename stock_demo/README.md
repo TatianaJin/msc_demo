@@ -3,7 +3,6 @@
 ```text
 |- crawlers: the python scripts for crawling data
 |- etl: the spark programs for data cleaning, data preprocessing, and data loading to database
-|- raw_data: the raw data
 ```
 
 

@@ -37,3 +37,28 @@ Table track {
   t_disc_number           int
   t_time_signature        double
 }
+
+Table artist_measure {
+  a_id                    int [pk, ref:- artist.a_id]
+  a_track_number          bigint
+  a_mode                  double
+  a_acousticness          double
+  a_danceability          double
+  a_energy                double
+  a_loudness              double
+  a_speechiness           double
+  a_instrumentalness      double
+  a_liveness              double
+  a_valence               double
+  a_tempo                 double
+}
+
+Table artist_cluster_features {
+  a_id                    int [pk, ref:- artist.a_id]
+  prediction              int [note: "cluster id 0-99"]
+}
+
+Table artist_cluster_features_smoothed {
+  a_id                    int [pk, ref:- artist.a_id]
+  prediction              int [note: "cluster id 0-99"]
+}

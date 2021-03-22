@@ -3,6 +3,7 @@
 ```text
 |- crawlers: the python scripts for crawling data
 |- etl: the spark programs for data cleaning, data preprocessing, and data loading to database
+|- sql: analytical SQL queries
 ```
 
 
@@ -16,3 +17,7 @@ _You may use the default data on proj10 by running `spark-submit etl/etl.py` wit
 #### Phase 2 (Initial schema, subject to change)
 
 ![ER Diagram](https://github.com/TatianaJin/msc_demo/blob/master/stock_demo/ER.png)
+
+#### Phase 3
+
+The SQL queries under `sql` are example analytical queries on the database with varied complexity.
